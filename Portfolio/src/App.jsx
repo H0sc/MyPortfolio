@@ -1,24 +1,19 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css"
+import "./App.scss"
+import Navbar from "react-bootstrap/Navbar"
+import Container from "react-bootstrap/Navbar"
+
 
 function App() {
   return (
     <>
-      <nav className="container">
-        <div className="row">
-          <div className="col col-8">
-            <div className="box">logo</div>
-          </div>
-
-          <div className="col">
-            <div className="box"></div>
-          </div>
-
-          <div className="col">
-            <div className="box"></div>
-          </div>
-        </div>
-      </nav>
+      <Navbar expand="lg">
+        <Container>
+          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        </Container>
+      </Navbar>
+      <div className="container bg-light shadow">
+        <p className="display-2"> I'm the container </p>
+      </div>
     </>
   );
 }
