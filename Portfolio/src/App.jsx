@@ -1,9 +1,11 @@
 import { Nav, Navbar, Container } from "react-bootstrap";
 import "./index.scss";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 function App() {
   return (
-    <>
+    <div className="app">
       <nav>
         <Navbar bg="light" data-bs-theme="light" expand="sm">
           <Container>
@@ -19,28 +21,63 @@ function App() {
       </nav>
 
       <main>
-        <header>
-          <div
-            className="border bg-secondary"
-            style={{ height: "500px" }}
-          ></div>
-          <div className="container-fluid p-0">
+        <div className="header-container">
+          <h1 className="timon-hosch-webdev">Timon Hosch <br /> Web-Development</h1>
+          <header
+            className="home-header mb-5 border bg-secondary"
+          >
+          </header>
+        </div>
+
+        <section className="projects-section">
+          <h2 className="projects">Projects</h2>
+          <div className="container-fluid">
             <div className="row">
               <div
-                className="box border col"
+                className="box border m-0 p-0 col-4 bg-secondary"
                 style={{ height: "250px" }}
-              ></div>
+              >
+                box 1 section 1
+              </div>
               <div
-                className="box border col"
+                className="box border m-0 p-0 col-4 bg-secondary"
                 style={{ height: "250px" }}
-              ></div>
+              >
+                box 2 section 1
+              </div>
+              <div
+                className="box border m-0 p-0 col-4 bg-secondary"
+                style={{ height: "250px" }}
+              >
+                box 3 section 1
+              </div>
+              <div
+                className="box border m-0 p-0 col-4 bg-secondary"
+                style={{ height: "250px" }}
+              >
+                box 4 section 1
+              </div>
+              <div
+                className="box border m-0 p-0 col-4 bg-secondary"
+                style={{ height: "250px" }}
+              >
+                box 5 section 1
+              </div>
+              <div
+                className="box border m-0 p-0 col-4 bg-secondary"
+                style={{ height: "250px" }}
+              >
+                box 6 section 1
+              </div>
             </div>
           </div>
-        </header>
+        </section>
       </main>
-      <footer className="bg-secondary" style={{height: "50px"}}>
+      {/* <FontAwesomeIcon icon={solid("circle-arrow-up")} beat size="2xl" /> */}
+      <footer className="border bg-secondary" style={{ height: "70px" }}>
+        footer
       </footer>
-    </>
+    </div>
   );
 }
 
