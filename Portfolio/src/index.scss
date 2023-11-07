@@ -18,6 +18,18 @@
     background: #4fa;
   }
   
+  #back-to-top-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3em;
+  }
+
+  #back-to-top-icon:hover {
+    color: lighten($color: #4fa, $amount: 2);
+    cursor: pointer;
+  }
+
   .home-header {
     height: 600px;
     background-image: url("../assets/forest.jpg");

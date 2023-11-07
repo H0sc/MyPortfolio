@@ -2,6 +2,8 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 import "./index.scss";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   return (
@@ -73,7 +75,7 @@ function App() {
           </div>
         </section>
       </main>
-      {/* <FontAwesomeIcon icon={solid("circle-arrow-up")} beat size="2xl" /> */}
+      <FontAwesomeIcon id="back-to-top-icon" icon={faCircleArrowUp} size="2xl"/>
       <footer className="border bg-secondary" style={{ height: "70px" }}>
         footer
       </footer>
