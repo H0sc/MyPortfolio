@@ -17,15 +17,22 @@
     height: 50px;
     background: #4fa;
   }
-  
-  #back-to-top-icon {
+
+  .goTopHidden {
+    display: none;
+  }
+
+  .goTop {
+    display: block;
     position: fixed;
     bottom: 20px;
     right: 20px;
     font-size: 3em;
+    transition: color .2s;
+    transition-timing-function: ease-in-out;
   }
 
-  #back-to-top-icon:hover {
+  .goTop:hover {
     color: lighten($color: #4fa, $amount: 2);
     cursor: pointer;
   }
@@ -40,7 +47,15 @@
     background-position: 50% 25%;
   }
 
-  .timon-hosch-webdev {
+  @keyframes move {
+    0%   {top: 40%; }
+    25%  {top: 37%}
+    50%  {top: 37%}
+    75%  {top: 37%}
+    100% {top: 40%; }
+  }
+
+  .timon-hosch-webdev-h1 {
     position: absolute;
     top: 40%;
     left: 25%;
@@ -51,6 +66,15 @@
     border-radius: 5px;
     padding: 30px;
   }
+
+  .timon-hosch-webdev-h1:hover {
+    animation: move 1s;
+    // animation-direction: alternate;
+  }
+
+  // .timon-hosch-webdev-h1:hover {
+    
+  // }
 
   .projects-section {
     margin-bottom: 5em;

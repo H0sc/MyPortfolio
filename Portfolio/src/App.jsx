@@ -4,11 +4,43 @@ import "./index.scss";
 // import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { useEffect, useRef, useState } from "react";
 
 function App() {
+
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const [showGoTop, setShowGoTop] = useState("goTopHidden")
+
+  const refScrollUp = useRef()
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleGoTopVisibility)
+  })
+  
+  // useEffect(() => {
+  // const e = window.addEventListener("scroll", handleVisibleButton);
+  
+  // return ()=> window.removeEventListener('scroll',handleVisibleButton);
+  // },[]);
+  
+  function handleGoTopVisibility () {
+    let position = window.scrollY
+    setScrollPosition(position)
+
+    if (position < 100) {
+      setShowGoTop("goTopHidden")
+    } else if (position > 100) {
+      setShowGoTop("goTop")
+    }
+  } 
+
+  const handleScrollUp = () => {
+    refScrollUp.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="app">
-      <nav>
+    <div className="app" >
+      <nav ref={refScrollUp}>
         <Navbar bg="light" data-bs-theme="light" expand="sm">
           <Container>
             <Navbar.Brand href="#home" className="me-auto">
@@ -24,7 +56,7 @@ function App() {
 
       <main>
         <div className="header-container">
-          <h1 className="timon-hosch-webdev">Timon Hosch <br /> Web-Development</h1>
+          <h1 className="timon-hosch-webdev-h1">Timon Hosch <br /> Web-Development</h1>
           <header
             className="home-header mb-5 border bg-secondary"
           >
@@ -75,7 +107,9 @@ function App() {
           </div>
         </section>
       </main>
-      <FontAwesomeIcon id="back-to-top-icon" icon={faCircleArrowUp} size="2xl"/>
+      <div className={showGoTop} onClick={handleScrollUp}>
+        <FontAwesomeIcon icon={faCircleArrowUp} size="2xl"/>
+      </div>
       <footer className="border bg-secondary" style={{ height: "70px" }}>
         footer
       </footer>
