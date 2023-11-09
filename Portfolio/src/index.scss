@@ -8,16 +8,6 @@
     background-color: #f8f9fa;
   }
 
-  nav {
-    height: 70px;
-  }
-  
-  .box {
-    width: auto;
-    height: 50px;
-    background: #4fa;
-  }
-
   .goTopHidden {
     display: none;
   }
@@ -47,13 +37,13 @@
     background-position: 50% 25%;
   }
 
-  @keyframes move {
-    0%   {top: 40%; }
-    25%  {top: 37%}
-    50%  {top: 37%}
-    75%  {top: 37%}
-    100% {top: 40%; }
-  }
+  // @keyframes move {
+  //   0%   {top: 40%; }
+  //   25%  {top: 37%}
+  //   50%  {top: 37%}
+  //   75%  {top: 37%}
+  //   100% {top: 40%; }
+  // }
 
   .timon-hosch-webdev-h1 {
     position: absolute;
@@ -67,26 +57,10 @@
     padding: 30px;
   }
 
-  .timon-hosch-webdev-h1:hover {
-    animation: move 1s;
-    // animation-direction: alternate;
-  }
-
   // .timon-hosch-webdev-h1:hover {
-    
+  //   animation: move 1s;
+  //   animation-direction: alternate;
   // }
-
-  .projects-section {
-    margin-bottom: 5em;
-  }
-
-  .projects {
-    width: 100vw;
-    text-align: center;
-    margin-top: 2em;
-    margin-bottom: 20px;
-    font-size: 4em;
-  }
 
   body::before {
     content: "XS";

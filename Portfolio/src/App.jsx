@@ -1,10 +1,12 @@
-import { Nav, Navbar, Container } from "react-bootstrap";
 import "./index.scss";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useRef, useState } from "react";
+import NavBar from "./NavBar/NavBar";
+import ProjectsPreview from "./ProjectsPreview/ProjectsPreview";
+import Footer from "./Footer/Footer";
 
 function App() {
 
@@ -13,15 +15,10 @@ function App() {
 
   const refScrollUp = useRef()
 
+  // muss optimiert werden, da unperformant
   useEffect(() => {
     window.addEventListener("scroll", handleGoTopVisibility)
   })
-  
-  // useEffect(() => {
-  // const e = window.addEventListener("scroll", handleVisibleButton);
-  
-  // return ()=> window.removeEventListener('scroll',handleVisibleButton);
-  // },[]);
   
   function handleGoTopVisibility () {
     let position = window.scrollY
@@ -35,25 +32,13 @@ function App() {
   } 
 
   const handleScrollUp = () => {
-    refScrollUp.current.scrollIntoView({ behavior: "smooth" });
+    refScrollUp.current.scrollIntoView({ behavior: "auto" });
   };
 
   return (
-    <div className="app" >
-      <nav ref={refScrollUp}>
-        <Navbar bg="light" data-bs-theme="light" expand="sm">
-          <Container>
-            <Navbar.Brand href="#home" className="me-auto">
-              Home
-            </Navbar.Brand>
-            <Nav className="me-0">
-              <Nav.Link href="#projects">Projects</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
-      </nav>
-
+    <div className="app">
+      <div ref={refScrollUp}></div>
+      <NavBar />
       <main>
         <div className="header-container">
           <h1 className="timon-hosch-webdev-h1">Timon Hosch <br /> Web-Development</h1>
@@ -62,57 +47,12 @@ function App() {
           >
           </header>
         </div>
-
-        <section className="projects-section">
-          <h2 className="projects">Projects</h2>
-          <div className="container-fluid">
-            <div className="row">
-              <div
-                className="box border m-0 p-0 col-4 bg-secondary"
-                style={{ height: "250px" }}
-              >
-                box 1 section 1
-              </div>
-              <div
-                className="box border m-0 p-0 col-4 bg-secondary"
-                style={{ height: "250px" }}
-              >
-                box 2 section 1
-              </div>
-              <div
-                className="box border m-0 p-0 col-4 bg-secondary"
-                style={{ height: "250px" }}
-              >
-                box 3 section 1
-              </div>
-              <div
-                className="box border m-0 p-0 col-4 bg-secondary"
-                style={{ height: "250px" }}
-              >
-                box 4 section 1
-              </div>
-              <div
-                className="box border m-0 p-0 col-4 bg-secondary"
-                style={{ height: "250px" }}
-              >
-                box 5 section 1
-              </div>
-              <div
-                className="box border m-0 p-0 col-4 bg-secondary"
-                style={{ height: "250px" }}
-              >
-                box 6 section 1
-              </div>
-            </div>
-          </div>
-        </section>
+        <ProjectsPreview />
       </main>
       <div className={showGoTop} onClick={handleScrollUp}>
         <FontAwesomeIcon icon={faCircleArrowUp} size="2xl"/>
       </div>
-      <footer className="border bg-secondary" style={{ height: "70px" }}>
-        footer
-      </footer>
+      <Footer />
     </div>
   );
 }
