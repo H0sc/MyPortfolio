@@ -8,60 +8,6 @@
     background-color: #f8f9fa;
   }
 
-  .goTopHidden {
-    display: none;
-  }
-
-  .goTop {
-    display: block;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 3em;
-    transition: color .2s;
-    transition-timing-function: ease-in-out;
-  }
-
-  .goTop:hover {
-    color: lighten($color: #4fa, $amount: 2);
-    cursor: pointer;
-  }
-
-  .home-header {
-    height: 600px;
-    background-image: url("../assets/forest.jpg");
-    background-origin: border-box;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    background-position: 50% 25%;
-  }
-
-  // @keyframes move {
-  //   0%   {top: 40%; }
-  //   25%  {top: 37%}
-  //   50%  {top: 37%}
-  //   75%  {top: 37%}
-  //   100% {top: 40%; }
-  // }
-
-  .timon-hosch-webdev-h1 {
-    position: absolute;
-    top: 40%;
-    left: 25%;
-    color: white;
-    font-size: 5em;
-    text-align: center;
-    background-color: #5b5b5b7f;
-    border-radius: 5px;
-    padding: 30px;
-  }
-
-  // .timon-hosch-webdev-h1:hover {
-  //   animation: move 1s;
-  //   animation-direction: alternate;
-  // }
-
   body::before {
     content: "XS";
     color: red;

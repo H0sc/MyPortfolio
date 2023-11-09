@@ -1,0 +1,21 @@
+.home-header {
+    height: 600px;
+    background-image: url("../assets/forest.jpg");
+    background-origin: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 50% 25%;
+  }
+
+  .timon-hosch-webdev-h1 {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    color: white;
+    font-size: 5em;
+    text-align: center;
+    background-color: #5b5b5b7f;
+    border-radius: 5px;
+    padding: 30px;
+  }

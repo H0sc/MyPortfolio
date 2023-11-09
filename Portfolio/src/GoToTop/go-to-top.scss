@@ -1,0 +1,18 @@
+.goTopHidden {
+    display: none;
+  }
+
+  .goTop {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3em;
+    transition: color .2s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .goTop:hover {
+    color: lighten($color: #4fa, $amount: 2);
+    cursor: pointer;
+  }
